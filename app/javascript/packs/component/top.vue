@@ -49,15 +49,15 @@ export default {
   }
 }
 
-.image_container::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: inset 0px 0px 4px 4px #eeeeee;
-}
+// .image_container::after {
+//   position: absolute;
+//   content: "";
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   box-shadow: inset 0px 0px 4px 4px #eeeeee;
+// }
 
 .text_area {
   margin: 25px 0px 0px 0px;
