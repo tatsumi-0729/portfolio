@@ -32,23 +32,38 @@ export default {
 @mixin font {
   font-family: serif;
   text-decoration: none;
-  color: #000000;
+  color: #333333;
   margin-bottom: 6px;
 }
 
 .container {
-  margin: 100px 0px 0px 0px;
+  margin: 105px 0px 0px 15px;
 }
 
 .image_container {
   position: relative;
 
   .topImage {
-    height: 260px;
-    width: 370px;
+    height: 200px;
+    width: 325px;
+    // モノクロにする
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    //
+  }
+  .topImage:hover {
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
   }
 }
 
+// 枠をぼやけさせる
 // .image_container::after {
 //   position: absolute;
 //   content: "";
