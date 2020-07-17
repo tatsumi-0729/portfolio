@@ -37,10 +37,11 @@ export default {};
 }
 
 .navbar {
-  width: 15%;
-  margin: 90px 0px 0px 100px;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  width: 15%;
+  margin: 90px 0px 0px 100px;
   font-size: 15px;
   .line {
     @include font;
@@ -100,5 +101,7 @@ export default {};
 
 .router_width {
   width: 70%;
+  position: relative;
+  left: 325px;
 }
 </style>

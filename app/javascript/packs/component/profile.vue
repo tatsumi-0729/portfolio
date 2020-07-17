@@ -38,6 +38,7 @@ export default {
 
 .container {
   margin: 105px 0px 0px 15px;
+  width: 70%;
 }
 
 .image_container {

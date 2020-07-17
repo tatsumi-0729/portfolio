@@ -22,6 +22,7 @@
             <div class="card_content">
               My Second Post.
               <br />please see in.
+              <br />xoxo
             </div>
             <div class="card_post_day">Jun. 2020</div>
           </div>
@@ -33,6 +34,55 @@
             <div class="card_title">My Third Post</div>
             <div class="card_content">
               My Third Post.
+              <br />please see in.
+            </div>
+            <div class="card_post_day">May. 2020</div>
+          </div>
+        </div>
+        <!-- card4 -->
+        <div class="card card-skin">
+          <div class="card_imgframe"></div>
+          <div class="card_textbox">
+            <div class="card_title">My Fouth Post</div>
+            <div class="card_content">
+              My Fouth Post.
+              <br />please see in.
+              <br />xoxo
+            </div>
+            <div class="card_post_day">May. 2020</div>
+          </div>
+        </div>
+        <!-- card5 -->
+        <div class="card card-skin">
+          <div class="card_imgframe"></div>
+          <div class="card_textbox">
+            <div class="card_title">My Fifth Post</div>
+            <div class="card_content">
+              My Fifth Post.
+              <br />please see in.
+            </div>
+            <div class="card_post_day">May. 2020</div>
+          </div>
+        </div>
+        <!-- card6 -->
+        <div class="card card-skin">
+          <div class="card_imgframe"></div>
+          <div class="card_textbox">
+            <div class="card_title">My Sixth Post</div>
+            <div class="card_content">
+              My Sixth Post.
+              <br />please see in.
+            </div>
+            <div class="card_post_day">May. 2020</div>
+          </div>
+        </div>
+        <!-- card7 -->
+        <div class="card card-skin">
+          <div class="card_imgframe"></div>
+          <div class="card_textbox">
+            <div class="card_title">My Seventh Post</div>
+            <div class="card_content">
+              My Seventh Post.
               <br />please see in.
             </div>
             <div class="card_post_day">May. 2020</div>
@@ -61,24 +111,26 @@ export default {
 }
 .container {
   margin: 90px 0px 10px 0px;
-  width: 110%;
+  width: 100%;
 }
 
 .card_container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
 
   .card {
-    width: 27%;
+    width: 24%;
     height: auto;
     margin: 15px;
+    // display: flex;
+    // align-items: flex-end;
 
     .card_imgframe {
       width: 100%;
       height: auto;
       padding-top: 56.25%;
-      background: url(https://placehold.jp/360x640.png) no-repeat center;
+      background: url(https://placehold.jp/300x640.png) no-repeat center;
       background-size: cover;
       box-sizing: border-box;
     }
