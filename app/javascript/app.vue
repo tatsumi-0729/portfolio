@@ -97,11 +97,33 @@ export default {};
     opacity: 0.6;
     zoom: 1;
   }
+
+  // .profile:visited {
+  //   color: lightgray;
+  // }
+
+  // .blog:visited {
+  //   color: lightgray;
+  // }
+
+  // .archive:visited {
+  //   color: lightgray;
+  // }
+
+  // .contact:visited {
+  //   color: lightgray;
+  // }
 }
 
 .router_width {
   width: 70%;
   position: relative;
   left: 325px;
+}
+
+@media screen and (max-width: 959px) {
+}
+
+@media screen and (max-width: 559px) {
 }
 </style>

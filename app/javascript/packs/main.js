@@ -12,10 +12,12 @@ import Vue from "vue";
 import App from "../app.vue";
 import router from "./router.js";
 import axios from "axios";
+import vuex from "vuex";
 
 new Vue({
   el: "#app",
   router,
   axios,
+  vuex,
   render: (h) => h(App),
 });

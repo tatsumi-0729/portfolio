@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container">
-      <h2 class="coming_soon">Coming soon</h2>
+      <h2 class="reference">Reference</h2>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
   margin: 100px 0px 10px 0px;
   width: 100%;
 
-  .coming_soon {
+  .reference {
     @include font();
   }
 }
