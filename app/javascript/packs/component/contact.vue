@@ -40,7 +40,7 @@ export default {
 
     .contact {
       @include font();
-      margin: 0px 0px 25px 0px;
+      margin: 0px 0px 30px 0px;
     }
 
     .title {
@@ -85,8 +85,17 @@ export default {
 }
 
 @media screen and (max-width: 959px) {
+  .container {
+    margin-top: 110px;
+    margin-left: 25%;
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 559px) {
+  .container {
+    margin-left: 10%;
+    width: 60%;
+  }
 }
 </style>

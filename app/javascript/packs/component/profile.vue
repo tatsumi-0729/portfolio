@@ -9,9 +9,9 @@
           Tatsumi Tamura was born in Yamaguchi Prefecture in 1995,
           <br />He played tennis ball in High School,
           <br />And has got the right for National Convention and has lost second round,
-          <br />But that experience a lot of influence for him aspect a lot,
+          <br />But that experience a lot of influence for him in all ways possible,
           <br />Now he is working as a Engineer to make web system for B to B and B to C,
-          <br />Usually, he using Java and Ruby, JavaScript of programing language,
+          <br />Usually, he using Java, Ruby and JavaScript of programing language,
           <br />The most favorite programing language of his is Vue.js,
         </p>
       </div>
@@ -88,5 +88,8 @@ export default {
 }
 
 @media screen and (max-width: 559px) {
+  .introduce_text {
+    font-size: 13px;
+  }
 }
 </style>

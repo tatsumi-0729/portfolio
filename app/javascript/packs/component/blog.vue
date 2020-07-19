@@ -125,7 +125,7 @@ export default {
   color: #333333;
 }
 .container {
-  margin: 90px 0px 10px 0px;
+  margin: 90px 0px 0px 0px;
   width: 100%;
 
   .card_container {
@@ -200,5 +200,15 @@ export default {
 }
 
 @media screen and (max-width: 559px) {
+  .container {
+    margin: 90px 0px 0px 20px;
+    width: 100%;
+
+    .card_container {
+      display: flex;
+      flex-direction: column;
+      width: 240%;
+    }
+  }
 }
 </style>

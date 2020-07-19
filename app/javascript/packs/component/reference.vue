@@ -30,6 +30,10 @@ export default {
 }
 
 @media screen and (max-width: 959px) {
+  .container {
+    margin: 100px 0px 0px 15px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 559px) {

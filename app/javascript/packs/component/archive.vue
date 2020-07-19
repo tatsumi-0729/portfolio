@@ -21,7 +21,7 @@ export default {
   color: #333333;
 }
 .container {
-  margin: 100px 0px 10px 0px;
+  margin: 100px 0px 0px 0px;
   width: 100%;
 
   .coming_soon {
@@ -30,6 +30,10 @@ export default {
 }
 
 @media screen and (max-width: 959px) {
+  .container {
+    margin: 100px 0px 0px 15px;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 559px) {
