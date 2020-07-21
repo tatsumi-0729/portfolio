@@ -14,13 +14,15 @@
         <div class="line">----</div>
       </div>
 
+      <!-- <p v-bind="scrollCount" id="scrollCount" class="scrollCount">{{ scrollCount }}</p> -->
+
       <div class="router_width">
         <router-view />
       </div>
 
       <div class="humberger">
         <input type="checkbox" id="checkbox" class="checkbox" />
-        <label for="checkbox" class="open">
+        <label for="checkbox" class="open" v-show="visible">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
@@ -40,7 +42,30 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function() {
+    return {
+      visible: false,
+      scrollCount: 0
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.scrollCount = window.scrollY;
+      if (this.scrollCount > 110) {
+        this.visible = true;
+      } else {
+        this.visible = false;
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +74,12 @@ export default {};
   text-decoration: none;
   color: #333333;
   margin-bottom: 6px;
+}
+
+.scrollCount {
+  position: fixed;
+  top: 50px;
+  left: 10px;
 }
 
 // PC
@@ -245,6 +276,18 @@ export default {};
     bottom: 20px;
     z-index: 1;
   }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(75px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -300,6 +343,7 @@ export default {};
 
     .humberger {
       display: block;
+      animation: fadeIn 0.1s;
 
       .checkbox {
         position: fixed;
