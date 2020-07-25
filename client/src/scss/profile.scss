@@ -1,0 +1,60 @@
+@mixin font {
+  font-family: serif;
+  text-decoration: none;
+  color: #333333;
+  margin-bottom: 6px;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin: 105px 0px 0px 15px;
+  width: 90%;
+  .image_container {
+    position: relative;
+    .topImage {
+      height: 200px;
+      width: 325px;
+      // モノクロにする
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+      //
+    }
+    .topImage:hover {
+      -webkit-filter: grayscale(0);
+      -moz-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+      -o-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+  // 枠をぼやけさせる
+  // .image_container::after {
+  //   position: absolute;
+  //   content: "";
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   box-shadow: inset 0px 0px 4px 4px #eeeeee;
+  // }
+  .text_area {
+    width: 75%;
+    margin: 15px 0px 0px 0px;
+    .introduce_text {
+      @include font();
+    }
+  }
+}
+@media screen and (max-width: 959px) {
+  .profile {
+    margin: 0px 0px 0px 20px;
+  }
+}
+@media screen and (max-width: 559px) {
+  .introduce_text {
+    font-size: 13px;
+  }
+}

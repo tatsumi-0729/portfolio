@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+@mixin font {
+  font-family: serif;
+  text-decoration: none;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+// PC
+.container {
+  display: flex;
+  width: 100%;
+  .router_part {
+    width: 70%;
+    position: relative;
+    left: 325px;
+  }
+}
+
+// タブレット
+@media screen and (max-width: 959px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    // 余分な右余白を消す
+    // overflow: hidden;
+    .line {
+      display: none;
+    }
+    .router_part {
+      width: 100%;
+      position: relative;
+      left: 80px;
+    }
+  }
+}
+
+// スマートフォン
+@media screen and (max-width: 559px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .line {
+      display: none;
+    }
+  }
+}

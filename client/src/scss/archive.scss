@@ -1,0 +1,21 @@
+@mixin font {
+  font-family: serif;
+  text-decoration: none;
+  color: #333333;
+}
+.archive {
+  margin: 100px 0px 0px 10px;
+  width: 100%;
+  .coming_soon {
+    @include font();
+  }
+}
+@media screen and (max-width: 959px) {
+  .archive {
+    position: relative;
+    bottom: 105px;
+    left: 15px;
+  }
+}
+@media screen and (max-width: 559px) {
+}

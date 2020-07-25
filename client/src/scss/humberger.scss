@@ -1,0 +1,136 @@
+@mixin font_aside {
+  font-family: serif;
+  text-decoration: none;
+  color: #f5f5f5;
+  width: 35px;
+  position: relative;
+  left: 10px;
+  margin-top: 20px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.humberger {
+  animation: fadeIn 0.1s;
+  .checkbox {
+    position: fixed;
+    top: 650px;
+    left: -50vw;
+  }
+  .open {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    left: 25px;
+    top: 650px;
+    /* 三本線のスタイルを決める */
+    div {
+      display: block;
+      border-radius: 20px;
+      width: 30px;
+      height: 2px;
+      background: #444;
+      position: absolute;
+      left: 10px;
+      // transition: all 0.5s ease;
+    }
+    /* 線の縦位置の調整 */
+    .bar1 {
+      top: 6px;
+      background-color: #444;
+    }
+    .bar2 {
+      top: 15px;
+      background-color: #444;
+    }
+    .bar3 {
+      top: 24px;
+      background-color: #444;
+    }
+  }
+  aside {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 30%;
+    height: 100%;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(44, 44, 44);
+    opacity: 0.9;
+    transition: all 0.3s;
+    .profile_aside {
+      @include font_aside;
+      top: 450px;
+    }
+    .blog_aside {
+      @include font_aside;
+      top: 455px;
+    }
+    .archive_aside {
+      @include font_aside;
+      top: 460px;
+    }
+    .contact_aside {
+      @include font_aside;
+      top: 465px;
+    }
+    .profile_aside:hover {
+      cursor: pointer;
+      filter: alpha(opacity=30);
+      -ms-filter: "alpha(opacity=60)";
+      -moz-opacity: 0.6;
+      -khtml-opacity: 0.6;
+      opacity: 0.6;
+      zoom: 1;
+    }
+    .blog_aside:hover {
+      cursor: pointer;
+      filter: alpha(opacity=30);
+      -ms-filter: "alpha(opacity=60)";
+      -moz-opacity: 0.6;
+      -khtml-opacity: 0.6;
+      opacity: 0.6;
+      zoom: 1;
+    }
+    .archive_aside:hover {
+      cursor: pointer;
+      filter: alpha(opacity=30);
+      -ms-filter: "alpha(opacity=60)";
+      -moz-opacity: 0.6;
+      -khtml-opacity: 0.6;
+      opacity: 0.6;
+      zoom: 1;
+    }
+    .contact_aside:hover {
+      cursor: pointer;
+      filter: alpha(opacity=30);
+      -ms-filter: "alpha(opacity=60)";
+      -moz-opacity: 0.6;
+      -khtml-opacity: 0.6;
+      opacity: 0.6;
+      zoom: 1;
+    }
+    .close {
+      font-size: 15px;
+      color: #f5f5f5;
+      position: relative;
+      top: 520px;
+      left: 10px;
+    }
+  }
+  .checkbox:checked ~ aside {
+    left: 0;
+  }
+  .checkbox:checked ~ .open div {
+    left: -250px;
+  }
+}
