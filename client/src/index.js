@@ -8,7 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 import Profile from "./components/profile";
 import Blog from "./components/blog";
 import Archive from "./components/archive";
-import Contact from "./components/contact";
+import Postform from "./components/postform";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,7 +20,14 @@ ReactDOM.render(
             <Route exact path="/" component={Profile}></Route>
             <Route path="/blog" component={Blog}></Route>
             <Route path="/archive" component={Archive}></Route>
-            <Route path="/contact" component={Contact}></Route>
+            <Route
+              path="/contact"
+              render={() => <Postform title={"Contact"} />}
+            ></Route>
+            <Route
+              path="/post"
+              render={() => <Postform title={"Post"} />}
+            ></Route>
           </Switch>
         </div>
       </Router>

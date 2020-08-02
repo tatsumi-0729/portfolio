@@ -2,19 +2,79 @@
   font-family: serif;
   text-decoration: none;
   color: #333333;
+  margin-left: 30px;
+  width: 100%;
 }
 .reference {
-  margin: 100px 0px 10px 0px;
-  width: 100%;
-  .reference_text {
-    @include font();
+  margin: 100px 0px 10px 15px;
+  width: 75%;
+  height: auto;
+  background-color: #ffffff;
+  .title {
+    .title_text {
+      @include font();
+    }
+    .under_line {
+      border: solid 1px #333333;
+      width: 95%;
+      position: relative;
+      left: 20px;
+      bottom: 20px;
+    }
+  }
+  .image_src {
+    height: 15%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .content {
+    .content_text {
+      @include font();
+      width: 90%;
+    }
   }
 }
 @media screen and (max-width: 959px) {
   .reference {
     margin: 100px 0px 0px 15px;
-    width: 100%;
+    width: 78%;
+    .title {
+      .under_line {
+        width: 94%;
+        bottom: 15px;
+      }
+    }
   }
 }
+
+@mixin font_sp {
+  font-family: serif;
+  text-decoration: none;
+  color: #333333;
+  font-size: 13px;
+  margin: 10px 0px 20px 30px;
+  width: 100%;
+}
+
 @media screen and (max-width: 559px) {
+  .reference {
+    position: relative;
+    right: 40px;
+    width: 30%;
+    .title {
+      .title_text {
+        font-size: 25px;
+      }
+      .under_line {
+        width: 88%;
+        bottom: 15px;
+      }
+    }
+    .content {
+      .content_text {
+        @include font_sp();
+        width: 85%;
+      }
+    }
+  }
 }

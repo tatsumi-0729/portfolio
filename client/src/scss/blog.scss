@@ -11,21 +11,17 @@
     flex-wrap: wrap;
     width: 100%;
     .card {
+      margin: 15px;
       width: 24%;
       height: auto;
-      margin: 15px;
       .reference {
         text-decoration: none;
       }
-      // display: flex;
-      // align-items: flex-end;
       .card_imgframe {
+        position: relative;
+        top: 16px;
         width: 100%;
-        height: auto;
-        padding-top: 56.25%;
-        background: url(https://placehold.jp/300x640.png) no-repeat center;
-        background-size: cover;
-        box-sizing: border-box;
+        height: 135px;
       }
       .card_textbox {
         width: 100%;
@@ -34,7 +30,7 @@
         background: #ffffff;
         box-sizing: border-box;
       }
-      .card_textbox > * + * {
+      .card_textbox {
         margin-top: 10px;
       }
       .card_title {
@@ -68,16 +64,20 @@
   .blog {
     position: relative;
     bottom: 105px;
+    width: 100%;
+    .card_container {
+      width: 125%;
+    }
   }
 }
 @media screen and (max-width: 559px) {
   .blog {
-    margin: 90px 0px 0px 20px;
+    margin: 90px 0px 0px 32px;
     width: 100%;
     .card_container {
       display: flex;
       flex-direction: column;
-      width: 240%;
+      width: 280%;
     }
   }
 }

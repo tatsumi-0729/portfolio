@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import "../scss/sidebar.scss";
 import { Link } from "react-router-dom";
 
@@ -39,7 +38,10 @@ const Sidebar = () => {
           <div className="archive_route">Archive</div>
         </Link>
         <Link to="/contact" style={{ textDecoration: "none" }}>
-          <div className="contact_route">Contact</div>
+          <div className="postform_route">Contact</div>
+        </Link>
+        <Link to="/post" style={{ textDecoration: "none" }}>
+          <div className="postform_route">Post</div>
         </Link>
         <div className="line">----</div>
       </div>

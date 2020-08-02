@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../scss/humberger.scss";
 
 const Humberger = () => {
   return (
@@ -23,9 +24,12 @@ const Humberger = () => {
           <div className="archive_aside">Archive</div>
         </Link>
         <Link to="/contact" style={{ textDecoration: "none" }}>
-          <div className="contact_aside">Contact</div>
+          <div className="postform_aside">Contact</div>
         </Link>
-        <label for="checkbox" class="close">
+        <Link to="/post" style={{ textDecoration: "none" }}>
+          <div className="postform_aside">Post</div>
+        </Link>
+        <label for="checkbox" className="close">
           ×
         </label>
       </aside>

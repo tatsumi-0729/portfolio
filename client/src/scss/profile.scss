@@ -47,14 +47,77 @@
       @include font();
     }
   }
+
+  .skills {
+    margin: 50px 0px 0px 0px;
+    .skills_text {
+      @include font();
+      font-size: 23px;
+    }
+    // .under_line {
+    //   border: thin 1px #333333;
+    //   width: 100%;
+    // }
+    .skill_images {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      right: 40px;
+      width: 140%;
+
+      .skill_image {
+        margin: 25px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
 }
 @media screen and (max-width: 959px) {
   .profile {
     margin: 0px 0px 0px 20px;
+
+    .text_area {
+      width: 100%;
+      margin: 15px 0px 0px 0px;
+      .introduce_text {
+        @include font();
+      }
+    }
+    .skills {
+      margin: 40px 0px 10px 5px;
+      .skills_text {
+        @include font();
+        font-size: 22px;
+      }
+
+      .skill_images {
+        right: 40px;
+        width: 130%;
+
+        .skill_image {
+          margin: 25px;
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 559px) {
-  .introduce_text {
-    font-size: 13px;
+  .profile {
+    .introduce_text {
+      font-size: 13px;
+    }
+    .text_area {
+      width: 92%;
+      margin: 15px 0px 0px 0px;
+    }
+    .skills {
+      .skill_images {
+        right: 30px;
+        width: 130%;
+      }
+    }
   }
 }
