@@ -1,31 +1,46 @@
 import React from "react";
-import { useState } from "react";
-// import { useEffect } from "react";
-import axios from "axios";
+import { useState, useReducer } from "react";
+import axiosReducer from "../reducer/axiosReducer";
 import "../scss/postform.scss";
 
 const Postform = (props) => {
-  const state = {
-    title: "",
-    email: "",
-    content: "",
-    image: "",
+  // useState
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+  // useReducer
+  // eslint-disable-next-line
+  const [state, dispatch] = useReducer(axiosReducer, []);
+
+  const contactAxios = (e) => {
+    // ページのリロード回避
+    e.preventDefault();
+    const res = dispatch({
+      type: "POST",
+      url: "http://localhost:3000/contact",
+      requestData: [title, email, content],
+    });
+    console.log(res.data);
+    clearFeild();
   };
 
-  // useState
-  const [requestData, fetchDate] = useState(state);
-
-  // 送信ボタンが押された時
-  const postAxios = async () => {
-    const res = await axios.post(
-      "http://localhost:3000/newArticle",
-      requestData
-    );
-    console.log(requestData.title);
-    console.log(requestData.email);
-    console.log(requestData.image);
-    console.log(requestData.content);
+  const postAxios = (e) => {
+    e.preventDefault();
+    const res = dispatch({
+      type: "POST",
+      url: "http://localhost:3000/post",
+      requestData: [title, image, content],
+    });
     console.log(res.data);
+    clearFeild();
+  };
+
+  const clearFeild = () => {
+    setTitle("");
+    setImage("");
+    setEmail("");
+    setContent("");
   };
 
   if (props.title === "Contact") {
@@ -40,9 +55,7 @@ const Postform = (props) => {
             id="_title"
             className="title"
             type="text"
-            onChange={(e) =>
-              fetchDate({ ...requestData, title: e.target.value })
-            }
+            onChange={(e) => setTitle(e.target.value)}
           />
           <label htmlFor="_email" className="email_text">
             Email
@@ -51,9 +64,7 @@ const Postform = (props) => {
             id="_email"
             className="email"
             type="text"
-            onChange={(e) =>
-              fetchDate({ ...requestData, email: e.target.value })
-            }
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="_content" className="content_text">
             Content
@@ -61,11 +72,9 @@ const Postform = (props) => {
           <textarea
             id="_content"
             className="content"
-            onChange={(e) =>
-              fetchDate({ ...requestData, content: e.target.value })
-            }
+            onChange={(e) => setContent(e.target.value)}
           />
-          <button className="send_button" onClick={postAxios}>
+          <button className="send_button" onClick={contactAxios}>
             Send
           </button>
         </div>
@@ -83,9 +92,7 @@ const Postform = (props) => {
             id="_title"
             className="title"
             type="text"
-            onChange={(e) =>
-              fetchDate({ ...requestData, title: e.target.value })
-            }
+            onChange={(e) => setTitle(e.target.value)}
           />
           <label htmlFor="_email" className="email_text">
             Image
@@ -94,9 +101,7 @@ const Postform = (props) => {
             id="_image"
             className="image"
             type="file"
-            onChange={(e) =>
-              fetchDate({ ...requestData, image: e.target.value })
-            }
+            onChange={(e) => setImage(e.target.value)}
           />
           <label htmlFor="_image" className="image_text">
             Content
@@ -104,9 +109,7 @@ const Postform = (props) => {
           <textarea
             id="_content"
             className="content"
-            onChange={(e) =>
-              fetchDate({ ...requestData, content: e.target.value })
-            }
+            onChange={(e) => setContent(e.target.value)}
           />
           <button className="send_button" onClick={postAxios}>
             Send
