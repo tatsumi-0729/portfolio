@@ -15,25 +15,25 @@ const Postform = (props) => {
 
   const contactAxios = (e) => {
     // ページのリロード回避
-    e.preventDefault();
-    const res = dispatch({
+    // e.preventDefault();
+    dispatch({
       type: "POST",
-      url: "http://localhost:3000/contact",
+      url: "http://localhost:3000/api/v1/contact/create",
       requestData: [title, email, content],
     });
-    console.log(res.data);
     clearFeild();
+    console.log("complete");
   };
 
   const postAxios = (e) => {
     e.preventDefault();
-    const res = dispatch({
+    dispatch({
       type: "POST",
-      url: "http://localhost:3000/post",
+      url: "http://localhost:3000/api/v1/article/create",
       requestData: [title, image, content],
     });
-    console.log(res.data);
     clearFeild();
+    console.log("complete");
   };
 
   const clearFeild = () => {

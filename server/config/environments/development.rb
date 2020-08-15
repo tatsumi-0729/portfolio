@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # HTTP Origin header (http://localhost:4000) didn't match request.base_url (http://localhost:3000)エラー
+  config.action_controller.forgery_protection_origin_check = false
+
   # Do not eager load code on boot.
   config.eager_load = false
 

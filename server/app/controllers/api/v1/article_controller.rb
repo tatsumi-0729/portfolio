@@ -1,4 +1,6 @@
 class Api::V1::ArticleController < ApplicationController
+  # あまり良くないかも…
+  skip_before_action :verify_authenticity_token
 
   # 一覧表示
   def index
@@ -24,6 +26,7 @@ class Api::V1::ArticleController < ApplicationController
   # 新規投稿
   def create
     @Article = Article.create(create_params)
+    binding.pry
      if @Article.save
       @Article.parse_base64 = create_params[:image]
       render json: "ok", status: :created
@@ -46,6 +49,6 @@ class Api::V1::ArticleController < ApplicationController
 
   private
   def create_params
-    params.require(:requestData).permit(:title, :image, :content)
+    params.require(:article).permit(:title, :image, :content)
   end
 end
