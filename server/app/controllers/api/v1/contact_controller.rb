@@ -1,5 +1,5 @@
 class Api::V1::ContactController < ApplicationController
-  # あまり良くないかも…
+  # あまり良くないかも…。
   skip_before_action :verify_authenticity_token
 
   def create
